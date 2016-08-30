@@ -6,7 +6,7 @@ firmware_location=/lib/firmware/ti-connectivity
 mount_point=/mnt
 
 if [[ ! -e $mount_point$firmware_location ]]; then
-    mkdir $mount_point
+    mkdir $mount_point$firmware_location
     mount --bind $firmware_location $mount_point$firmware_location
 elif [[ ! -d $mount_point$firmware_location ]]; then
     echo "$mount_point already exists but is not a directory" 1>&2
