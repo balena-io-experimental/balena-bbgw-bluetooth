@@ -12,7 +12,7 @@ elif [[ ! -d $mount_point ]]; then
     echo "$mount_point already exists but is not a directory" 1>&2
 fi
 
-cp $mount_point$firmware_location'/*' $firmware_location
+cp $mount_point$firmware_location'/*' $firmware_location'/'
 # Seem to have to run in twice, as the first run times out at the moment
 bb-wl18xx-bluetooth
 bb-wl18xx-bluetooth
