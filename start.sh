@@ -3,12 +3,12 @@
 echo "Set up Bluetooth"
 
 firmware_location=/lib/firmware/ti-connectivity
-mount_point=/mnt
+mount_point=/mnt/root
 
-if [[ ! -e $mount_point$firmware_location ]]; then
-    mkdir -p $mount_point$firmware_location
-    mount --bind $firmware_location $mount_point$firmware_location
-elif [[ ! -d $mount_point$firmware_location ]]; then
+if [[ ! -e $mount_point ]]; then
+    mkdir -p $mount_point
+    mount --bind / $mount_point
+elif [[ ! -d $mount_point ]]; then
     echo "$mount_point already exists but is not a directory" 1>&2
 fi
 
