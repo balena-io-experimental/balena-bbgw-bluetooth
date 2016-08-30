@@ -2,17 +2,23 @@
 
 echo "Set up Bluetooth"
 
-firmware_location=/lib/firmware/ti-connectivity
-mount_point=/mnt/root
+mkdir -p /mnt/root
+mount --bind / /mnt/root
 
-if [[ ! -e $mount_point ]]; then
-    mkdir -p $mount_point
-    mount --bind / $mount_point
-elif [[ ! -d $mount_point ]]; then
-    echo "$mount_point already exists but is not a directory" 1>&2
-fi
+# firmware_location=/lib/firmware/ti-connectivity
+# mount_point=/mnt/root
 
-cp $mount_point$firmware_location'/*' $firmware_location'/'
+# if [[ ! -e $mount_point ]]; then
+#     mkdir -p $mount_point
+#     mount --bind / $mount_point
+# elif [[ ! -d $mount_point ]]; then
+#     echo "$mount_point already exists but is not a directory" 1>&2
+# fi
+
+# cp $mount_point$firmware_location'/*' $firmware_location'/'
+cp /mnt/root/lib/firmware/ti-connectivity/* /lib/firmware/ti-connectivity/
+
+
 # Seem to have to run in twice, as the first run times out at the moment
 bb-wl18xx-bluetooth
 bb-wl18xx-bluetooth
