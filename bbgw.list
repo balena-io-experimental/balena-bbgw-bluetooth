@@ -1,2 +1,0 @@
-deb [arch=armhf] http://repos.rcn-ee.com/debian/ jessie main
-deb-src [arch=armhf] http://repos.rcn-ee.com/debian/ jessie main
