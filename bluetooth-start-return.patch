@@ -1,0 +1,10 @@
+--- bb-wl18xx-bluetooth	2016-08-31 14:29:05.764073985 +0800
++++ bb-wl18xx-bluetooth.new	2016-08-31 15:22:48.570061902 +0800
+@@ -54,6 +54,6 @@
+ 		sleep 1
+ 		echo 1 > /sys/class/gpio/gpio${bt_gpio_en}/value || true
+ 		sleep 1
+-		hciattach ${bt_port} ${bt_settings} || true
++		hciattach ${bt_port} ${bt_settings}
+ 	fi
+ fi
