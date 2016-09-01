@@ -4,9 +4,10 @@ MAINTAINER Gergely Imreh <gergely@resin.io>
 
 WORKDIR /usr/src/app
 
+# Enable systemd
 ENV INITSYSTEM on
 
-# Install openSSH, remove the apt list to reduce the size of the image
+# Install bluetooth, remove the apt list to reduce the size of the image
 RUN apt-get update && apt-get install -yq --no-install-recommends \
      bluetooth bluez \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
