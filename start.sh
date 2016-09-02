@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Copying firmware
+if [ ! -f "/lib/firmware/ti-connectivity/TIInit_11.8.32.bts" ]; then
+ echo "Firware is not present, copying"
+ cp firmware/TIInit_11.8.32.bts /lib/firmware/ti-connectivity/
+ cp firmware/wl18xx-conf.bin /lib/firmware/ti-connectivity/
+ ln -s ti-connectivity/TIInit_11.8.32.bts /lib/firmware/TIInit_11.8.32.bts
+fi
+
 echo "Finding Bluetooth interface"
 while [ -z "$(hcitool dev |grep hci0)" ]; do echo "...nothing yet"; sleep 2; done
 

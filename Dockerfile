@@ -17,7 +17,7 @@ COPY bluetooth/bb-wl18xx-bluetooth.service /lib/systemd/system/
 COPY bluetooth/bb-wl18xx-bluetooth /usr/bin/
 
 # Copy all files from root to the WORKDIR
-COPY start.sh ./
+COPY . ./
 
 # Enable Bluetooth on application start
 RUN systemctl enable bb-wl18xx-bluetooth.service
