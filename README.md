@@ -8,6 +8,10 @@ functionality.
 This project should provide a reasonable basis for building your
 own Bluetooth enabled resin.io application with BBGW.
 
+The firmware and system files are imported from
+https://github.com/rcn-ee/repos/tree/master/bb-wl18xx-firmware/suite/jessie/debian
+and might need to update from there, when out of date in this repo!
+
 ## License
 
 Copyright 2016 Rulemotion Ltd.
