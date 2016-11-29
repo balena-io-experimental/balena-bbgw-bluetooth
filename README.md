@@ -12,6 +12,9 @@ The firmware and system files are imported from
 https://github.com/rcn-ee/repos/tree/master/bb-wl18xx-firmware/suite/jessie/debian
 and might need to update from there, when out of date in this repo!
 
+One thing to add to the systemd `.service` file when adding to this 
+repo: `Restart=on-failure` (see current code).
+
 ## License
 
 Copyright 2016 Rulemotion Ltd.
